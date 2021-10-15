@@ -7,14 +7,14 @@
     <title>Tutorial_3</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body>    
     <form method="post">	
         <div class="age-calcu">
         <h2>Choose Your DOB</h2>
         <select name="yy">
             <option value="">Year</option>
             <?php
+                //select option for birth year
                 for($i=1900; $i<=2020; $i++) {
                     echo "<option value='$i'>$i</option>";
                 }
@@ -23,6 +23,7 @@
         <select name="mm">
             <option value="">Month</option>
             <?php
+                //select option for birth month
                 for($i=1; $i<=12; $i++) {
                     echo "<option value='$i'>$i</option>";
                 }
@@ -31,16 +32,17 @@
         <select name="dd">
             <option value="">Date</option>
             <?php
+                //select option for birth day
                 for($i=1; $i<=31; $i++) {
                     echo "<option value='$i'>$i</option>";
                 }
             ?>
         </select>	
         <input type="submit" name="sub" value="Check"/>
-        </div>
+        </div><!-- /.age-calcu -->
         <div class="show-msg">
         <?php include 'calculate.php'; ?>
-        </div>
+        </div><!-- /.show-msg -->
     </form>
 </body>
 </html>
