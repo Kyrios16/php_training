@@ -13,14 +13,10 @@
         *@param $num 
         */
         function starPattern($num) {
-            //upper half of pattern
-            //outer loop for row
             for ($i = 1; $i <= $num; $i++) {
-                //inner loop for spaces 
                 for ($k = $num; $k > $i; $k--) {
                     echo '&nbsp; &nbsp;';
                 }
-                //inner loop for stars
                 for ($j = 1; $j <= $i; $j++) {
                     echo '*&nbsp;';
                 }
@@ -29,18 +25,13 @@
                 }
                 echo '<br>';
             }
-            //lower half of pattern
-            //outer loop for row
             for ($i = $num-1; $i > 0; $i--) {
-                //inner loop for spaces
                 for ($k = $num-1; $k >= $i; $k--) {
                     echo '&nbsp; &nbsp;';
                 }
-                //inner loop for stars
                 for ($j = 1; $j <= $i; $j++) {
                     echo '*&nbsp;';
                 }
-                //inner loop for stars
                 for ($j = $i-1; $j >= 1; $j--) {
                     echo '*&nbsp;';
                 }
