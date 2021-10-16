@@ -41,7 +41,31 @@
         <input type="submit" name="sub" value="Check"/>
         </div><!-- /.age-calcu -->
         <div class="show-msg">
-        <?php include 'calculate.php'; ?>
+            <?php
+                /*
+                *check and calculate age 
+                */
+                if (isset($_POST['sub'])) {
+                    $mm = $_POST['mm'];
+                    $dd = $_POST['dd'];
+                    $yy = $_POST['yy'];
+
+                    $dob = $mm."/".$dd."/".$yy;
+                    $arr = explode('/',$dob);
+                    
+                    $dateTs = strtotime($dob);
+                    if ($dateTs == 0 ) {
+                        echo "Enter Your Valid DOB";
+                        die();
+                    }
+                    $now = strtotime('today');
+                    if(sizeof($arr)!= 3) die('ERROR:please entera valid date');
+                    $ageDays = floor(($now-$dateTs)/86400);
+                    $ageYears = floor($ageDays/365);
+                    $ageMonths = floor(($ageDays-($ageYears*365))/30);
+                    echo "You are age is " .$ageYears. " years, " .$ageMonths. " months old.";
+                }
+            ?>
         </div><!-- /.show-msg -->
     </form>
 </body>

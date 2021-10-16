@@ -10,9 +10,9 @@
 </head>
 <body>
     <table>
-    <?php for ($row=1; $row<=8; $row++) { ?>
+    <?php for ($row = 1; $row <= 8; $row++) { ?>
         <tr>
-        <?php for ($col=1; $col<=8; $col++) {
+        <?php for ($col = 1; $col <= 8; $col++) {
             $total= $row + $col;
             if($total%2 == 0) { 
         ?>
