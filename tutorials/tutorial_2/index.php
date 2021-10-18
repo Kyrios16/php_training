@@ -10,36 +10,35 @@
     <?php
         /*
         *create star pattern 
-        *@param $num 
+        *@param $row 
         */
-        function starPattern($num) {
-            for ($i = 1; $i <= $num; $i++) {
-                for ($k = $num; $k > $i; $k--) {
+        function starPattern($row) {
+            for ($i = 1; $i <= $row; $i++) {
+                for ($numOfSpace = $row; $numOfSpace > $i; $numOfSpace--) {
                     echo '&nbsp; &nbsp;';
                 }
-                for ($j = 1; $j <= $i; $j++) {
+                for ($numOfStar = 1; $numOfStar <= $i; $numOfStar++) {
                     echo '*&nbsp;';
                 }
-                for ($j = $i-1; $j >= 1; $j--) {
+                for ($numOfStar = $i-1; $numOfStar >= 1; $numOfStar--) {
                     echo '*&nbsp;';
                 }
                 echo '<br>';
             }
-            for ($i = $num-1; $i > 0; $i--) {
-                for ($k = $num-1; $k >= $i; $k--) {
+            for ($i = $row-1; $i > 0; $i--) {
+                for ($numOfSpace = $row-1; $numOfSpace >= $i; $numOfSpace--) {
                     echo '&nbsp; &nbsp;';
                 }
-                for ($j = 1; $j <= $i; $j++) {
+                for ($numOfStar = 1; $numOfStar <= $i; $numOfStar++) {
                     echo '*&nbsp;';
                 }
-                for ($j = $i-1; $j >= 1; $j--) {
+                for ($numOfStar = $i-1; $numOfStar >= 1; $numOfStar--) {
                     echo '*&nbsp;';
                 }
                 echo '<br>';
             }
         }
-        $num = 6;
-        starPattern($num);   
+        starPattern(6);   
     ?>   
 </body>
 </html>
