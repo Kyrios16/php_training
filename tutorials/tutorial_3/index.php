@@ -63,7 +63,7 @@
                         echo "Enter Your Valid DOB";
                         return;
                     }
-                    $now = strtotime('today');
+                    $now = strtotime("today");
                     $ageDays = floor(($now-$dateTs)/86400);
                     $ageYears = floor($ageDays/365);
                     $ageMonths = floor(($ageDays-($ageYears*365))/30);
