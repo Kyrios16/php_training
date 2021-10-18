@@ -10,15 +10,18 @@
 </head>
 <body>
     <table>
-    <?php for ($row = 1; $row <= 8; $row++) { ?>
+    <?php 
+        $sizeOfChess = 8;
+        for ($row = 1; $row <= $sizeOfChess; $row++) { 
+    ?>
         <tr>
-        <?php for ($col = 1; $col <= 8; $col++) {
-            $total= $row + $col;
-            if($total%2 == 0) { 
+        <?php for ($col = 1; $col <= $sizeOfChess; $col++) {
+            $total = $row + $col;
+            if($total % 2 == 0) { 
         ?>
-            <td class='white-cell'></td>
+            <td class="white-cell"></td>
             <?php } else { ?>
-                <td class='black-cell'></td>
+                <td class="black-cell"></td>
             <?php } ?>
         <?php } ?>
         </tr>

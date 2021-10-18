@@ -1,27 +1,27 @@
 @charset "UTF-8";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 table {
-    width: 260px;
-    border: 1px solid #000;
-    margin: 0 auto;
+  width: 260px;
+  border: 1px solid #000;
+  margin: 0 auto;
 }
 
 .white-cell,
 .black-cell {
-    height: 30px;
-    width: 30px;
+  height: 30px;
+  width: 30px;
 }
 
 .white-cell {
-    background-color: #FFF;
+  background-color: #fff;
 }
 
 .black-cell {
-    background-color: #000;
+  background-color: #000;
 }
