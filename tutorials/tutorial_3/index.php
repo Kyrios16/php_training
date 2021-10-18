@@ -7,7 +7,11 @@
     <title>Tutorial_3</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>    
+<body>
+    <?php 
+        $START_YEAR = 1900;
+        $END_YEAR = 2021;
+    ?>    
     <form method="post">	
         <div class="age-calcu">
         <h2>Choose Your DOB</h2>
@@ -15,7 +19,7 @@
             <option value="">Year</option>
             <?php
                 //select option for birth year
-                for($i=1900; $i<=2020; $i++) {
+                for($i = $START_YEAR; $i <= $END_YEAR; $i++) {
                     echo "<option value='$i'>$i</option>";
                 }
             ?>
@@ -24,7 +28,7 @@
             <option value="">Month</option>
             <?php
                 //select option for birth month
-                for($i=1; $i<=12; $i++) {
+                for($i = 1; $i <= 12; $i++) {
                     echo "<option value='$i'>$i</option>";
                 }
             ?>
@@ -33,13 +37,14 @@
             <option value="">Date</option>
             <?php
                 //select option for birth day
-                for($i=1; $i<=31; $i++) {
+                for($i = 1; $i <= 31; $i++) {
                     echo "<option value='$i'>$i</option>";
                 }
             ?>
         </select>	
         <input type="submit" name="sub" value="Check"/>
-        </div><!-- /.age-calcu -->
+        </div>
+        <!-- /.age-calcu -->
         <div class="show-msg">
             <?php
                 /*
@@ -54,19 +59,19 @@
                     $arr = explode('/',$dob);
                     
                     $dateTs = strtotime($dob);
-                    if ($dateTs == 0 ) {
+                    if ($dateTs == 0 || sizeof($arr)!= 3 ) {
                         echo "Enter Your Valid DOB";
-                        die();
+                        return;
                     }
                     $now = strtotime('today');
-                    if(sizeof($arr)!= 3) die('ERROR:please entera valid date');
                     $ageDays = floor(($now-$dateTs)/86400);
                     $ageYears = floor($ageDays/365);
                     $ageMonths = floor(($ageDays-($ageYears*365))/30);
                     echo "You are age is " .$ageYears. " years, " .$ageMonths. " months old.";
                 }
             ?>
-        </div><!-- /.show-msg -->
+        </div>
+        <!-- /.show-msg -->
     </form>
 </body>
 </html>
