@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.wrap {
-  width: 40%;
-  margin: 0 auto;
+.login-sec,
+.profile-sec {
+	width: 60%;
 }
