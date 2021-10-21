@@ -15,18 +15,29 @@ $result = mysqli_query($conn, "SELECT * FROM users");
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
-<body">
-    <div class="container">
-
+<body class="bg-secondary">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-light">User's Information List</h2>
+            </div>
+            <div class="col-md-6">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="chart/index.php" class="btn btn-primary me-md-2">Show Graph</a>
+                    <a href="register.php" class="btn btn-info text-light">Add New Information</a>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center my-3">
-            <h3 class="text-dark">User's Information List</h3>
             <table class="table table-dark table-hover table-bordered text-center">
                 <tr>
                     <th>ID</th>
                     <th>Userame</th>
                     <th>Email</th>
+                    <th>Job</th>
                     <th>Phone</th>
                     <th>Address</th>
+                    <th>Salary</th>
                     <th>Action</th>
                 </tr>
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>
@@ -34,8 +45,10 @@ $result = mysqli_query($conn, "SELECT * FROM users");
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['username']; ?></td>
                         <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['job']; ?></td>
                         <td><?php echo $row['phone']; ?></td>
                         <td><?php echo $row['address']; ?></td>
+                        <td><?php echo $row['salary']; ?></td>
                         <td>
                             <a href="_actions/delete.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger" onClick="return confirm('Are you sure?')">
                                 Delete
@@ -48,12 +61,8 @@ $result = mysqli_query($conn, "SELECT * FROM users");
                 <?php endwhile ?>
             </table>
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="_actions/logout.php" class="btn btn-warning me-md-2">logout</a>
-            <a href="register.php" class="btn btn-info">Register</a>
-        </div>
-
+        <a href="_actions/logout.php" class="btn btn-warning me-md-2 float-end">logout</a>
     </div>
-    </body>
+</body>
 
 </html>

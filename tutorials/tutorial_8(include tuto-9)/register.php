@@ -23,8 +23,10 @@
 		<form action="_actions/create.php" method="post" class="mb-2">
 			<input type="text" name="username" class="form-control mb-2" placeholder="Name" required>
 			<input type="email" name="email" class="form-control mb-2" placeholder="Email" required>
+			<input type="text" name="job" class="form-control mb-2" placeholder="Job" required>
 			<input type="text" name="phone" class="form-control mb-2" placeholder="Phone" required>
 			<textarea name="address" class="form-control mb-2" placeholder="Address" required></textarea>
+			<input type="text" name="salary" class="form-control mb-2" placeholder="Salary" required>
 			<input type="password" name="password" class="form-control mb-2" placeholder="Password" required>
 			<button type="submit" name="submit" class="w-50 btn btn-lg btn-outline-success">
 				Register

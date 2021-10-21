@@ -30,8 +30,10 @@
             <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
             <input type="text" name="username" class="form-control mb-2" value="<?php echo $row['username'] ?>" required>
             <input type="email" name="email" class="form-control mb-2" value="<?php echo $row['email'] ?>" required>
+            <input type="text" name="job" class="form-control mb-2" value="<?php echo $row['job'] ?>" required>
             <input type="text" name="phone" class="form-control mb-2" value="<?php echo $row['phone'] ?>" required>
             <textarea name="address" class="form-control mb-2" value="<?php echo $row['address'] ?>" placeholder="<?php echo $row['address'] ?>" required></textarea>
+            <input type="text" name="salary" class="form-control mb-2" value="<?php echo $row['salary'] ?>" required>
             <input type="password" name="password" class="form-control mb-2" value="<?php echo $row['password'] ?>" required>
             <input type="submit" name="submit" class="w-50 btn btn-lg btn-outline-success" value="Update" />
         </form>
