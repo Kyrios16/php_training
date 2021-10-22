@@ -13,10 +13,10 @@ if ($error) {
 
 //district image type and directory
 if ($type === "image/jpeg" || $type === "image/jpg") {
-    move_uploaded_file($tmp, 'imgs-jpg/' . $name . '.jpg');
+    move_uploaded_file($tmp, 'imgs/jpg/' . $name . '.jpg');
     header('location: ../show.php');
 } else if ($type === "image/png") {
-    move_uploaded_file($tmp, 'imgs-png/' . $name . '.png');
+    move_uploaded_file($tmp, 'imgs/png/' . $name . '.png');
     header('location: ../show.php');
 } else {
     header('location: ../index.php?error=type');
