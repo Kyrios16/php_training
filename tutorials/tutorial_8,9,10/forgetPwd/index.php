@@ -30,7 +30,7 @@ if (isset($_POST['email'])) {
 
         $mail->setfrom('testkaung16@gmail.com', 'Kaung Khant Naing');
         $mail->addaddress($email);
-        $mail->addreplyto('kaungkhantnaing168@gmail.com');
+        $mail->addreplyto('testkaung16@gmail.com');
 
         //Content
         $url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/resetPwd.php?code=$code";

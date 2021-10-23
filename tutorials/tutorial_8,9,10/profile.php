@@ -46,7 +46,7 @@ $auth = auth();
 			</li>
 		</ul>
 		<br>
-		<a href="_actions/login.php" class="btn btn-outline-primary text-light">Manage Users</a> |
+		<a href="_actions/login.php" class="btn btn-outline-primary text-light">Admin Panel</a> |
 		<a href="_actions/logout.php" class="btn btn-outline-warning text-light">Logout</a>
 	</div>
 </body>

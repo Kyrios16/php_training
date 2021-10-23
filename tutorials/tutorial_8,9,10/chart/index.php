@@ -35,29 +35,11 @@ include("../confs/auth.php");
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['JobsTiTle', 'Salary'],
-                <?php
-                $sql = "SELECT * FROM users";
-                $query = mysqli_query($conn, $sql);
-                while ($result = mysqli_fetch_assoc($query)) {
-                    foreach ($result as $job) {
-                        if ($job === "Web Developer") {
-                            $jobDev = $job;
-                        } else if ($job === "Web Designer") {
-                            $jobDeg = $job;
-                        } else if ($job === "Leader") {
-                            $jobLdr = $job;
-                        } else if ($job === "Manager") {
-                            $jobMgr = $job;
-                        } else if ($job === "CEO") {
-                            $jobCeo = $job;
-                        }
-                    }
-                }
-                ?>['<?php echo $jobDev ?>', 300000],
-                ['<?php echo $jobDeg ?>', 350000],
-                ['<?php echo $jobLdr ?>', 1000000],
-                ['<?php echo $jobMgr ?>', 1500000],
-                ['<?php echo $jobCeo ?>', 3000000]
+                ['Web Developer', 300000],
+                ['Web Designer', 350000],
+                ['Leader', 1000000],
+                ['Manager', 1500000],
+                ['CEO', 3000000]
             ]);
 
             var options = {

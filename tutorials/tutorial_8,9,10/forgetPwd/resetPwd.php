@@ -13,13 +13,13 @@ if (mysqli_num_rows($getEmailQuery) == 0) {
     echo "Can't Find Page";
 }
 
-if (isset($_POST['password'])) {
-    $password = md5($_POST['password']);
+if (isset($_POST['newPassword'])) {
+    $newPassword = md5($_POST['newPassword']);
     $row = mysqli_fetch_array($getEmailQuery);
     $email = $row['email'];
+    echo $email;
 
-    $query = mysqli_query($conn, "UPDATE users SET password = '$password'
-            WHERE email = '$email'");
+    $query = mysqli_query($conn, "UPDATE users SET password = '$newPassword' WHERE email = '$email'");
 
     if ($query) {
         $deleteCodeQuery = mysqli_query($conn, "DELETE FROM resetPwdCodes WHERE code = '$code'");
@@ -47,7 +47,7 @@ if (isset($_POST['password'])) {
         <div class="row">
             <h3 class="mb-3 text-center text-dark">Enter Your New Password</h3>
             <form action=" " method="post">
-                <input type="password" name="password" id="password" class="form-control mb-3" placeholder="New Password">
+                <input type="password" name="newPassword" id="newPassword" class="form-control mb-3" placeholder="New Password">
                 <input class="btn btn-success" type="submit" name="submit" value="Update Password">
                 <a href="../index.php" class="btn btn-primary">Back To Login</a>
             </form>
