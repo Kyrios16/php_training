@@ -15,7 +15,7 @@ $userInfo = mysqli_fetch_assoc($result);
 
 if ($userInfo['username'] === "admin" && $userInfo['job'] === "CEO") {
     $_SESSION['user'] = $userInfo;
-    header("location: ../manage.php");
+    header("location: ../admin.php");
 } else if ($userInfo['username'] === $username && $userInfo['password'] === $password) {
     $_SESSION['user'] = $userInfo;
     header("location: ../profile.php");
