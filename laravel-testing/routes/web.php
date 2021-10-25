@@ -15,7 +15,6 @@ use App\Models\Task;
 |
 */
 
-
 // Route::group(['middleware' => ['web']], function () {
     /**
      * Show Task Dashboard

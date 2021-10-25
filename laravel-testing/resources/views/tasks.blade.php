@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -42,18 +42,16 @@
                     <div class="panel-heading">
                         Current Tasks
                     </div>
-
                     <div class="panel-body">
                         <table class="table table-striped task-table">
                             <thead>
-                                <th>Task</th>
+                                <th>Tasks</th>
                                 <th>&nbsp;</th>
                             </thead>
                             <tbody>
                                 @foreach ($tasks as $task)
                                     <tr>
                                         <td class="table-text"><div>{{ $task->name }}</div></td>
-
                                         <!-- Task Delete Button -->
                                         <td>
                                             <form action="{{ url('task/'.$task->id) }}" method="POST">
