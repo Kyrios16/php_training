@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading ">
                     New Task
                 </div>
 
@@ -28,7 +28,7 @@
                         <!-- Add Task Button -->
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
-                                <button type="submit" class="btn btn-default">
+                                <button type="submit" class="btn btn-success">
                                     <i class="fa fa-btn fa-plus"></i>Add Task
                                 </button>
                             </div>
