@@ -36,7 +36,7 @@ class TaskController extends Controller
 
     /**
      * Add New Task
-     *check validate with form request StoreTaskRequest
+     * check validate with form request StoreTaskRequest
      * @param $request
      * @return view tasks
      */

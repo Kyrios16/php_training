@@ -20,18 +20,15 @@ Route::group(['middleware' => ['web']], function () {
     /**
      * Show Task Dashboard
      */
-    // Route::get('/', 'TaskController@showTaskList')->name('show.tasks');
     Route::get('/', [TaskController::class, 'showTaskList'])->name('show.tasks');
 
     /**
      * Add New Task
      */
-    // Route::post('/task', 'TaskController@addNewTask')->name('add.tasks');
     Route::post('/task', [TaskController::class, 'addNewTask'])->name('add.tasks');
 
     /**
      * Delete Task
      */
-    // Route::delete('/task/{id}', 'TaskController@deleteTask')->name('delete.tasks');
     Route::delete('/task/{id}', [TaskController::class, 'deleteTask'])->name('delete.tasks');
 });

@@ -26,7 +26,7 @@ class TaskDao implements TaskDaoInterface
     /**
      * Add New Task
      * 
-     * @param $validated validate value fromrequest
+     * @param $validated validate value from request
      * @return $task
      */
     public function addNewTask($validated)
