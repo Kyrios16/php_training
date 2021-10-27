@@ -16,8 +16,10 @@ interface TaskServiceInterface
 
     /**
      * Add New Task
+     * 
+     * @param $validated
      */
-    public function addNewTask(Request $request);
+    public function addNewTask($validated);
 
     /**
      *To delete post by id

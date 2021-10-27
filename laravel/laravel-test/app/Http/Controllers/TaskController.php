@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\Services\TaskServiceInterface;
-use App\Models\Task;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\StoreTaskRequest;
 
 
 class TaskController extends Controller
@@ -38,12 +36,15 @@ class TaskController extends Controller
 
     /**
      * Add New Task
-     * 
-     * @param Illuminate\Http\Request $request
+     *check validate with form request StoreTaskRequest
+     * @param $request
+     * @return view tasks
      */
-    public function addNewTask(Request $request)
+    public function addNewTask(StoreTaskRequest $request)
     {
-        return $this->taskInterface->addNewTask($request);
+        $validated = $request->validated();
+        $this->taskInterface->addNewTask($validated);
+        return redirect('/');
     }
 
     /**
@@ -53,6 +54,7 @@ class TaskController extends Controller
      */
     public function deleteTask($id)
     {
-        return $this->taskInterface->deleteTask($id);
+        $this->taskInterface->deleteTask($id);
+        return redirect('/');
     }
 }
