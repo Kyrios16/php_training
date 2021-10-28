@@ -69,7 +69,7 @@ class PostController extends Controller
 
         $post = $this->postInterface->getPostCreate($request);
 
-        return redirect('/posts')->with('message', 'You have successfully created!');
+        return redirect('/posts');
     }
 
     public function show()
@@ -97,6 +97,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = $this->postInterface->postDelete($id);
-        return redirect('/posts')->with('message', 'You have successfully deleted!');
+        return redirect('/posts');
     }
 }

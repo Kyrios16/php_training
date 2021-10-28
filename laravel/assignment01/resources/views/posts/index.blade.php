@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment-1</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
@@ -17,10 +17,10 @@
         @foreach ($posts as $post)
         <article class="mb-2">
             <a href="/posts/{{ $post->id }}/edit" class="text-xl font-bold text-blue-500 mb-10">{{ $post->title }}</a>
-            <p class="text-md text-gray-600">{{ $post->content }}</p>
-            <small class="text-md text-gray-600">{{ $post->author }}</small> |
-            <small class="text-md text-gray-600">{{ $post->phone }}</small> |
-            <small class="text-md text-gray-600">{{ $post->email }}</small>
+            <p class="text-md text-gray-600 my-5">{{ $post->content }}</p>
+            <small class="text-md text-green-700">{{ $post->author }}</small> |
+            <small class="text-md text-green-700">{{ $post->phone }}</small> |
+            <small class="text-md text-green-700">{{ $post->email }}</small>
             <hr class="mt-2">
         </article>
         @endforeach
