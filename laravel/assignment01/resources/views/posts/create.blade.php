@@ -10,7 +10,7 @@
 
 <body>
     <div style="width: 900px;" class="container max-w-full mx-auto pt-4">
-        <form method="POST" action="{{url('posts/')}}">
+        <form method="POST" action="{{url('/posts')}}">
             @csrf
 
             <div class="mb-4">

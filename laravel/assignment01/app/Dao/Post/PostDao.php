@@ -27,13 +27,20 @@ class PostDao implements PostDaoInterface
      */
     public function getPostCreate($request)
     {
-        $post = new Post([
-            'title' => $request->get('title'),
-            'content' => $request->get('content'),
-            'author' => $request->get('author'),
-            'phone' => $request->get('phone'),
-            'email' => $request->get('email')
-        ]);
+        $post = new Post;
+        // ([
+        //     'title' => $request->get('title'),
+        //     'content' => $request->get('content'),
+        //     'author' => $request->get('author'),
+        //     'phone' => $request->get('phone'),
+        //     'email' => $request->get('email')
+        // ]);
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->author = $request->author;
+        $post->phone = $request->phone;
+        $post->email = $request->email;
+
         $post->save();
 
         return $post;

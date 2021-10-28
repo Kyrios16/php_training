@@ -33,7 +33,7 @@ class PostController extends Controller
     {
         $posts = $this->postInterface->getPostList($request);
 
-        return view('post.index', ['posts' => $posts]);
+        return view('posts.index', ['posts' => $posts]);
     }
 
 
@@ -44,9 +44,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('posts.create');
     }
-
 
 
     /**
@@ -70,7 +69,7 @@ class PostController extends Controller
 
         $post = $this->postInterface->getPostCreate($request);
 
-        return redirect('/')->with('message', 'You have successfully created!');
+        return redirect('/posts')->with('message', 'You have successfully created!');
     }
 
     public function show()
@@ -98,6 +97,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = $this->postInterface->postDelete($id);
-        return redirect('/')->with('message', 'You have successfully deleted!');
+        return redirect('/posts')->with('message', 'You have successfully deleted!');
     }
 }
