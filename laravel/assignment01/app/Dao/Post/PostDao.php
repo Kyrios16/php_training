@@ -40,6 +40,37 @@ class PostDao implements PostDaoInterface
     }
 
     /**
+     * edit post 
+     * @param $id
+     * @return post
+     */
+    public function postEdit($id)
+    {
+        $post = Post::find($id);
+
+        return $post;
+    }
+
+    /**
+     * update post 
+     * @param $request, $id
+     * @return post
+     */
+    public function postUpdate($request, $id)
+    {
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->author = $request->author;
+        $post->phone = $request->phone;
+        $post->email = $request->email;
+
+        $post->save();
+
+        return $post;
+    }
+
+    /**
      *To delete post by id
      * @param $id
      * @return $post

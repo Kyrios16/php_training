@@ -78,15 +78,40 @@ class PostController extends Controller
     }
 
 
-    public function edit()
+    /**
+     * post edit
+     * 
+     * @return update blade
+     */
+    public function edit($id)
     {
-        //show form to edit the post
+        $post = $this->postInterface->postEdit($id);
+
+        return view('posts.create', compact('post'));
     }
 
 
-    public function update()
+    /**
+     * poste update in db
+     * 
+     * @return index blade
+     */
+    public function update(Request $request, $id)
     {
-        //save the edited post
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'content' => 'required|max:255',
+            'author' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        $post = $this->postInterface->postUpdate($request, $id);
+
+        return redirect('/posts');
     }
 
     /**

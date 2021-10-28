@@ -49,6 +49,26 @@ class PostService implements PostServiceInterface
     }
 
     /**
+     * edit post 
+     * @param $id
+     * @return post
+     */
+    public function postEdit($id)
+    {
+        return $this->postDao->postEdit($id);
+    }
+
+    /**
+     * update post 
+     * @param $request, $id
+     * @return post
+     */
+    public function postUpdate($request, $id)
+    {
+        return $this->postDao->postUpdate($request, $id);
+    }
+
+    /**
      *To delete post by id
      * @param $id
      * @return post list

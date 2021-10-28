@@ -21,6 +21,18 @@ interface PostDaoInterface
     public function getPostCreate($request);
 
     /**
+     * edit post 
+     * @param $id
+     */
+    public function postEdit($id);
+
+    /**
+     * update post 
+     * @param $request, $id
+     */
+    public function postUpdate($request, $id);
+
+    /**
      *To delete post by id
      * @param $id
      */
