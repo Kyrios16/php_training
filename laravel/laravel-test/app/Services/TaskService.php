@@ -4,8 +4,8 @@ namespace App\Services;
 
 use App\Contracts\Dao\TaskDaoInterface;
 use App\Contracts\Services\TaskServiceInterface;
+use App\Http\Requests\StoreTaskRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 
 /**
@@ -39,21 +39,12 @@ class TaskService implements TaskServiceInterface
     /**
      * Add New Task
      * 
-     * @param Illuminate\Http\Request $request
+     * @param $validated 
+     * @return validated task
      */
-    public function addNewTask(Request $request)
+    public function addNewTask($validated)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect('/')
-                ->withInput()
-                ->withErrors($validator);
-        }
-
-        return $this->taskDao->addNewTask($request);
+        return $this->taskDao->addNewTask($validated);
     }
 
     /**

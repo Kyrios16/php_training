@@ -16,6 +16,7 @@ interface TaskDaoInterface
 
     /**
      * Add New Task
+     * @param $request 
      */
     public function addNewTask($request);
 

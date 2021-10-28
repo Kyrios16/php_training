@@ -26,25 +26,23 @@ class TaskDao implements TaskDaoInterface
     /**
      * Add New Task
      * 
-     * @param Illuminate\Http\Request $request
+     * @param $validated validate value from request
+     * @return $task
      */
-    public function addNewTask($request)
+    public function addNewTask($validated)
     {
         $task = new Task;
-        $task->name = $request->name;
+        $task->name = $validated['name'];
         $task->save();
-        return redirect('/');
+        return $task;
     }
 
     /**
      *To delete post by id
      * @param $id
-     * @return View task list
      */
     public function deleteTask($id)
     {
         Task::findOrFail($id)->delete();
-
-        return redirect('/');
     }
 }
