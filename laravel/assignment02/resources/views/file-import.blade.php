@@ -4,16 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Import Export Excel & CSV to Database in Laravel 7</title>
+  <title>Assignment 2</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
-<body>
-  <div class="container mt-5 text-center">
+<body class="bg-secondary">
+  <div class="container mt-5 p-5 text-center bg-light rounded">
     <h2 class="mb-4">
       Import and Export CSV & Excel Files
     </h2>
-
     <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
       @csrf
       <div class="form-group mb-4" style="max-width: 500px; margin: 0 auto;">
