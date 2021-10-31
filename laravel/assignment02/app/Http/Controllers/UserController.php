@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\Exports\UsersExport;
+use Illuminate\Support\Facades\DB;
 use App\Contracts\Services\ImportAndExportServiceInterface;
 
 class UserController extends Controller
@@ -33,8 +34,23 @@ class UserController extends Controller
      */
     public function fileImport(Request $request)
     {
-        $this->fileInterface->fileImport($request);
-        return back();
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx,csv,pdf'
+        ]);
+
+        try {
+            DB::beginTransaction();
+
+            $this->fileInterface->fileImport($request);
+
+            DB::commit();
+
+            return redirect('/')->with('message', 'Posts uploaded successfully !');
+        } catch (\Exception $e) {
+            DB::rollback();
+
+            return redirect('/')->with('message', 'Posts upload failed !');
+        }
     }
 
     /**

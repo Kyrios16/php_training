@@ -87,7 +87,7 @@ class PostController extends Controller
     {
         $post = $this->postInterface->postEdit($id);
 
-        return view('posts.create', compact('post'));
+        return view('posts.edit', compact('post'));
     }
 
 
