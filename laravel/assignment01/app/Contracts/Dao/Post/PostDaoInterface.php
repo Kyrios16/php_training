@@ -28,7 +28,8 @@ interface PostDaoInterface
 
     /**
      * update post 
-     * @param $request, $id
+     * @param $id 
+     * @param $request
      */
     public function postUpdate($request, $id);
 

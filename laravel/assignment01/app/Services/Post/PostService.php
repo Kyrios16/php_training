@@ -60,7 +60,8 @@ class PostService implements PostServiceInterface
 
     /**
      * update post 
-     * @param $request, $id
+     * @param $id
+     * @param $request
      * @return post
      */
     public function postUpdate($request, $id)

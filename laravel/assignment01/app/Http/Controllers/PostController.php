@@ -50,7 +50,7 @@ class PostController extends Controller
 
     /**
      * Post create in db
-     * 
+     * @param $request
      * @return index blade
      */
     public function store(Request $request)
@@ -80,7 +80,7 @@ class PostController extends Controller
 
     /**
      * post edit
-     * 
+     * @param $id user id
      * @return update blade
      */
     public function edit($id)
@@ -93,7 +93,8 @@ class PostController extends Controller
 
     /**
      * poste update in db
-     * 
+     * @param $id
+     * @param $request
      * @return index blade
      */
     public function update(Request $request, $id)

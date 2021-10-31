@@ -30,7 +30,8 @@ interface PostServiceInterface
 
     /**
      * update post 
-     * @param $request, $id
+     * @param $id user id
+     * @param $request
      */
     public function postUpdate($request, $id);
 
