@@ -34,7 +34,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $users = $this->userInterface->getUserList($request);
-        return view('users.index', ['users' => $users]);
+        return view('users.index-user', ['users' => $users]);
     }
 
     /**
@@ -58,6 +58,7 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'gender' => 'required|max:255',
             'address' => 'required|max:255',
+            'email' => 'required|max:255',
             'password' => 'required|max:255',
         ]);
 
@@ -65,20 +66,8 @@ class UserController extends Controller
             return back()->withErrors($validator)->withInput();
         }
 
-        $post = $this->userInterface->getUserCreate($validator);
+        $post = $this->userInterface->getUserCreate($request);
         return redirect('/users')->with('message', 'User Addedd!');
-    }
-
-    /**
-     * To show user
-     * 
-     * @param $id user id
-     * @return show blade with $user
-     */
-    public function show($id)
-    {
-        $user = $this->userInterface->getUserCreate($id);
-        return view('users.show', ['users' => $user]);
     }
 
     /**
@@ -89,8 +78,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->userInterface->getUserCreate($id);
-        return view('users.edit', ['users' => $user]);
+        $user = $this->userInterface->findUser($id);
+        return view('users.edit', ['user' => $user]);
     }
 
     /**

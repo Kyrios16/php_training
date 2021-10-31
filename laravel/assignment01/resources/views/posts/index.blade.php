@@ -25,7 +25,7 @@
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 
-                        <button type="submit" class="text-md text-red-700">
+                        <button type="submit" class="text-md text-red-700" onclick="return confirm('Are you sure want to delete?')">
                             Delete
                         </button>
                     </form>

@@ -16,11 +16,6 @@ class AddColumnIntoUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('gender')->nullable()->after('name');
             $table->string('address')->nullable()->after('gender');
-            $table->softDeletes();
-        });
-
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropSoftDeletes();
         });
     }
 

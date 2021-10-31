@@ -1,10 +1,21 @@
-@extends('app')
+@extends('users.layouts.app')
 @section('content')
 
 <div class="card">
   <div class="card-header">Contactus Page</div>
   <div class="card-body">
-
+    @if (count($errors) > 0)
+    <!-- Form Error List -->
+    <div class="alert alert-danger text-center">
+      <strong class="text-red-700 text-opacity-100">Whoops...Something Wrong</strong>
+      <br><br>
+      <ul>
+        @foreach ($errors->all() as $error)
+        <li class="text-red-700 text-opacity-100 mb-2">{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
     <form action="{{ url('/users') }}" method="post">
       @csrf
       <label>Name</label></br>

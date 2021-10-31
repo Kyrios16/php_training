@@ -1,4 +1,4 @@
-@extends('app')
+@extends('users.layouts.app')
 @section('content')
 
 <div class="card">

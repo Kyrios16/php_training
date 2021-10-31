@@ -29,7 +29,6 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('post.d
 Route::get('/users', [UserController::class, 'index'])->name('user.index');
 Route::post('/users', [UserController::class, 'store'])->name('user.save');
 Route::get('/users/create', [UserController::class, 'create'])->name('user.create');
-Route::get('/users/show', [UserController::class, 'show'])->name('user.show');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::put('/users/{user}', [UserController::class, 'update'])->name('user.update');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('user.destroy');
