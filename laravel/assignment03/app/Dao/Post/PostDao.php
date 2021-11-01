@@ -118,16 +118,6 @@ class PostDao implements PostDaoInterface
             ->whereBetween('created_at', [$startDate, $endDate])
             ->get();
 
-        // $posts = DB::table('posts')
-        //     ->select('*')
-        //     ->whereRaw(
-        //         "(created_at >= ? AND created_at <= ?)",
-        //         [
-        //             $start . "00:00:00",
-        //             $end . "23:59:59"
-        //         ]
-        //     )
-        //     ->get();
         return $posts;
     }
 }

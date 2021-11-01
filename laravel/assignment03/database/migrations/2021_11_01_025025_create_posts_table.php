@@ -18,11 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('author');
-            $table->foreign('author')->references('id')->on('create_users_table')->onDelete('cascade');
             $table->string('email');
-            $table->foreign('email')->references('id')->on('create_users_table')->onDelete('cascade');
             $table->string('phone');
-            $table->foreign('phone')->references('id')->on('create_users_table')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('deleted_at')->nullable();
