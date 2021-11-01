@@ -47,7 +47,7 @@
           <p class="text-xl font-bold text-blue-500 mb-5">{{ $post->title }}</p>
         </div>
         <div class="col-start-8 col-end-12">
-          <small class="text-md text-pink-700"><i>By ~ </i>{{ $post->author }}</small>
+          <small class="text-md font-bold text-pink-700"><i>By ~ </i>{{ $post->author }}</small>
         </div>
       </div>
       <p class="text-md text-gray-600 my-2">{{ $post->content }}</p>
