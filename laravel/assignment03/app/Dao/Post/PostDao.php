@@ -112,18 +112,22 @@ class PostDao implements PostDaoInterface
      */
     public function postSearchByDate($request)
     {
-        $start = Carbon::parse($request->startDate)->toDateTimeString();
-        $end = Carbon::parse($request->endDate)->toDateTimeString();
+        $startDate = Carbon::parse($request->startDate)->toDateTimeString();
+        $endDate = Carbon::parse($request->endDate)->toDateTimeString();
         $posts = DB::table('posts')
-            ->select('*')
-            ->whereRaw(
-                "(created_at >= ? AND created_at <= ?)",
-                [
-                    $start . "00:00:00",
-                    $end . "23:59:59"
-                ]
-            )
+            ->whereBetween('created_at', [$startDate, $endDate])
             ->get();
+
+        // $posts = DB::table('posts')
+        //     ->select('*')
+        //     ->whereRaw(
+        //         "(created_at >= ? AND created_at <= ?)",
+        //         [
+        //             $start . "00:00:00",
+        //             $end . "23:59:59"
+        //         ]
+        //     )
+        //     ->get();
         return $posts;
     }
 }
