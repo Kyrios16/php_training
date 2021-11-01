@@ -51,10 +51,10 @@
         </div>
       </div>
       <p class="text-md text-gray-600 my-2">{{ $post->content }}</p>
-      <div class="grid grid-cols-6 gap-4">
+      <div class="grid grid-cols-6 gap-4 mt-3">
         <div class="col-start-1 col-span-2">
-          <a href="{{ route('post.edit',$post->id)}}"><i class="fas fa-edit text-green-600"></i></a>
-          <form action="{{ route('post.destroy',$post->id)}}" method="POST">
+          <a href="{{ route('post.edit',$post->id)}}"><i class="fas fa-edit text-green-600"></i></a> |
+          <form action="{{ route('post.destroy',$post->id)}}" method="POST" class="inline">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
 
@@ -63,7 +63,7 @@
             </button>
           </form>
         </div>
-        <div class="col-start-7 col-span-2 mt-5">
+        <div class="col-start-7 col-span-2">
           <small class="text-md text-green-700">{{ $post->phone }}</small> |
           <small class="text-md text-green-700">{{ $post->email }}</small>
         </div>
