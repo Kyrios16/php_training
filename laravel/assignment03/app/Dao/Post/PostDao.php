@@ -97,8 +97,8 @@ class PostDao implements PostDaoInterface
         $search = $request->input('search');
         $posts = DB::table('posts')
             ->select('*')
-            ->Where('title', '=', $search)
-            ->orWhere('author', '=', $search)
+            ->Where('title', 'LIKE', "%$search%")
+            ->orWhere('author', 'LIKE', "%$search%")
             ->get();
 
         return $posts;
