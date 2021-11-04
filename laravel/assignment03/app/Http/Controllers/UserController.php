@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserDetailMail;
 use App\Models\User;
 use App\Contracts\Services\User\UserServiceInterface;
 
@@ -59,6 +61,7 @@ class UserController extends Controller
             'gender' => 'required|max:255',
             'address' => 'required|max:255',
             'email' => 'required|max:255',
+            'phone' => 'required|max:255',
             'password' => 'required|max:255',
         ]);
 
@@ -67,6 +70,18 @@ class UserController extends Controller
         }
 
         $post = $this->userInterface->getUserCreate($request);
+
+        $userDetails = [
+            'heading' => "You successfully created new user.",
+            'name' => $post['author'],
+            'gender' => $post['gender'],
+            'address' => $post['address'],
+            'phone' => $post['phone'],
+            'email' => $post['email'],
+
+        ];
+        Mail::to($userDetails['email'])->send(new UserDetailMail($userDetails));
+
         return redirect('/users')->with('message', 'User Addedd!');
     }
 

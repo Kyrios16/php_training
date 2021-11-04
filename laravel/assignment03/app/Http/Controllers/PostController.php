@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Mail\TestMail;
+use App\Mail\PostUpdateMail;
 use App\Contracts\Services\Post\PostServiceInterface;
+use App\Mail\UserDetailMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -69,6 +73,16 @@ class PostController extends Controller
 
         $post = $this->postInterface->getPostCreate($request);
 
+        $details = [
+            'heading' => "You successfully created new post.",
+            'title' => $post['title'],
+            'content' => $post['content'],
+            'author' => $post['author'],
+            'email' => $post['email']
+
+        ];
+        Mail::to($details['email'])->send(new TestMail($details));
+
         return redirect('/posts');
     }
 
@@ -105,6 +119,17 @@ class PostController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         $post = $this->postInterface->postUpdate($request, $id);
+
+        $postDetails = [
+            'heading' => "You successfully created new post.",
+            'title' => $post['title'],
+            'content' => $post['content'],
+            'author' => $post['author'],
+            'email' => $post['email'],
+            'updated_at' => $post['updated_at']
+
+        ];
+        Mail::to($postDetails['email'])->send(new PostUpdateMail($postDetails));
 
         return redirect('/posts');
     }
