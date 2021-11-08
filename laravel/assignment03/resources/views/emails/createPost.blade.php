@@ -9,12 +9,12 @@
 </head>
 
 <body>
-  <h3>{{$details['heading']}}</h3>
+  <h3>{{ $details['heading'] }}</h3>
   <ul>
-    <li><b>Title</b> :{{$details['title']}}</li>
-    <li><b>Content</b> :{{$details['content']}}</li>
-    <li><b>Author name</b> :{{$details['author']}}</li>
-    <li><b>Email<b> :{{$details['email']}}</li>
+    <li><b>Title</b> :{{ $details['title'] }}</li>
+    <li><b>Content</b> :{{$details['content'] }}</li>
+    <li><b>Author name</b> :{{ $details['author'] }}</li>
+    <li><b>Email<b> :{{ $details['email'] }}</li>
   </ul>
 </body>
 

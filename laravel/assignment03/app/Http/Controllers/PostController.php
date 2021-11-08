@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Mail\TestMail;
 use App\Mail\PostUpdateMail;
 use App\Contracts\Services\Post\PostServiceInterface;
+use App\Mail\PostCreateMail;
 use App\Mail\UserDetailMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -81,7 +81,7 @@ class PostController extends Controller
             'email' => $post['email']
 
         ];
-        Mail::to($details['email'])->send(new TestMail($details));
+        Mail::to($details['email'])->send(new PostCreateMail($details));
 
         return redirect('/posts');
     }

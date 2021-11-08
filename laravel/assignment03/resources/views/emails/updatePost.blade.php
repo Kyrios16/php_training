@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <h3>{{$postDetails['heading']}}</h3>
+  <h3>{{ $postDetails['heading'] }}</h3>
   <ul>
-    <li><b>Title</b> :{{$postDetails['title']}}</li>
-    <li><b>Content</b> :{{$postDetails['content']}}</li>
-    <li><b>Author name</b> :{{$postDetails['author']}}</li>
-    <li><b>Email<b> :{{$postDetails['email']}}</li>
-    <li><b>Upadated at<b> :{{$postDetails['updated_at']}}</li>
+    <li><b>Title</b> :{{ $postDetails['title'] }}</li>
+    <li><b>Content</b> :{{ $postDetails['content'] }}</li>
+    <li><b>Author name</b> :{{ $postDetails['author'] }}</li>
+    <li><b>Email<b> :{{ $postDetails['email'] }}</li>
+    <li><b>Upadated at<b> :{{ $postDetails['updated_at'] }}</li>
   </ul>
 </body>
 

@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <h3>{{$userDetails['heading']}}</h3>
+  <h3>{{ $userDetails['heading'] }}</h3>
   <ul>
-    <li><b>Username</b> :{{$userDetails['name']}}</li>
-    <li><b>Gender</b> :{{$userDetails['gender']}}</li>
-    <li><b>Address</b> :{{$userDetails['address']}}</li>
-    <li><b>Phone</b> :{{$userDetails['phone']}}</li>
-    <li><b>Email<b> :{{$userDetails['email']}}</li>
+    <li><b>Username</b> :{{ $userDetails['name'] }}</li>
+    <li><b>Gender</b> :{{ $userDetails['gender'] }}</li>
+    <li><b>Address</b> :{{ $userDetails['address'] }}</li>
+    <li><b>Phone</b> :{{ $userDetails['phone'] }}</li>
+    <li><b>Email<b> :{{ $userDetails['email'] }}</li>
   </ul>
 </body>
 
