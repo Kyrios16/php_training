@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\API\Post\PostAPIController;
+>>>>>>> 3054fbd3c5abb91662eb6d86dccb74f1ff79fceb
 
 
 /*
@@ -16,10 +20,13 @@ use App\Http\Controllers\UserController;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
 
+=======
+>>>>>>> 3054fbd3c5abb91662eb6d86dccb74f1ff79fceb
 Route::get('/posts', [PostController::class, 'index'])->name('index');
 Route::post('/posts', [PostController::class, 'store'])->name('post.save');
 Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
@@ -36,6 +43,7 @@ Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('user.ed
 Route::put('/users/{user}', [UserController::class, 'update'])->name('user.update');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 
+<<<<<<< HEAD
 Route::get('/posts-view', function () {
     return view('API.api-index');
 });
@@ -45,5 +53,17 @@ Route::get('/posts-create', function () {
 });
 
 Route::get('/posts-edit', function () {
+=======
+
+Route::get('/api-view', function () {
+    return view('API.index');
+});
+
+Route::get('/api-view/post/create', function () {
+    return view('API.api-create');
+});
+
+Route::get('/api-view/post/{id}/edit', function () {
+>>>>>>> 3054fbd3c5abb91662eb6d86dccb74f1ff79fceb
     return view('API.api-edit');
 });

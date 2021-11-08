@@ -35,6 +35,19 @@ class PostAPIController extends Controller
         return response()->json($posts);
     }
 
+<<<<<<< HEAD
+=======
+    // /**
+    //  * Post create
+    //  * 
+    //  * @return create blade
+    //  */
+    // public function create()
+    // {
+    //     return view('posts.create');
+    // }
+
+>>>>>>> 3054fbd3c5abb91662eb6d86dccb74f1ff79fceb
 
     /**
      * to edit post
@@ -68,7 +81,10 @@ class PostAPIController extends Controller
         }
 
         $post = $this->postInterface->getPostCreate($request);
+<<<<<<< HEAD
         dd($post);
+=======
+>>>>>>> 3054fbd3c5abb91662eb6d86dccb74f1ff79fceb
 
         return response()->json($post);
     }
